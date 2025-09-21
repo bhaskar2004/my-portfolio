@@ -79,7 +79,7 @@ const Projects = () => {
                   <Github size={16} />
                   View Code
                 </Button>
-                <Button
+                {/* <Button
                   variant="ghost"
                   size="sm"
                   className="btn-ghost flex items-center gap-2"
@@ -90,7 +90,7 @@ const Projects = () => {
                 >
                   <ExternalLink size={16} />
                   View Details
-                </Button>
+                </Button> */}
               </div>
             </div>
           ))}

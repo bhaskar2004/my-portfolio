@@ -1,62 +1,6 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Github, Linkedin, Mail, Send, MapPin, Phone } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
+import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Validate form data
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      toast({
-        title: "Please fill all fields",
-        description: "All fields are required to send a message.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    // Success feedback
-    toast({
-      title: "Message Sent Successfully! 🎉",
-      description: "Thank you for reaching out! I'll get back to you within 24 hours.",
-    });
-    
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
-    
-    // In a real implementation, this would send the form data to a backend
-    console.log("Form submitted:", formData);
-  };
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
-
   const socialLinks = [
     {
       name: "GitHub",
@@ -79,171 +23,102 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="section-spacing section-padding bg-background-secondary">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Get In <span className="gradient-text">Touch</span>
+    <section className="py-20 px-4 bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+            Get In <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Touch</span>
           </h2>
-          <p className="text-lg text-foreground-muted max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Let's connect and discuss opportunities, collaborations, or just have a conversation about technology.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="animate-slide-up">
-            <div className="card-elevated p-8">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Send className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold">Send a Message</h3>
-              </div>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Full Name
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    placeholder="Your full name"
-                    className="w-full"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email Address
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="your.email@example.com"
-                    className="w-full"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    required
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Tell me about your project or just say hello..."
-                    rows={6}
-                    className="w-full resize-none"
-                  />
-                </div>
-
-                <Button type="submit" className="btn-hero w-full">
-                  <Send className="mr-2" size={20} />
-                  Send Message
-                </Button>
-              </form>
-            </div>
-          </div>
-
+        <div className="flex justify-center">
           {/* Contact Information */}
-          <div className="space-y-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            {/* Contact Details */}
-            <div className="card-elevated p-8">
+          <div className="max-w-md space-y-8">
+            {/* Contact Details Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-                  <Mail className="w-6 h-6 text-primary" />
+                <div className="w-12 h-12 rounded-xl bg-blue-100 flex items-center justify-center">
+                  <Mail className="w-6 h-6 text-blue-600" />
                 </div>
-                <h3 className="text-2xl font-bold">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-gray-900">Contact Information</h3>
               </div>
 
               <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-primary" />
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 rounded-xl bg-green-100 flex items-center justify-center group-hover:bg-green-200 transition-colors duration-300">
+                    <Phone className="w-5 h-5 text-green-600" />
                   </div>
                   <div>
-                    <p className="font-medium">Phone</p>
+                    <p className="font-semibold text-gray-900">Phone</p>
                     <a 
                       href="tel:+917676798351"
-                      className="text-foreground-muted hover:text-primary transition-colors duration-300"
+                      className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                     >
                       +91 7676798351
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-primary" />
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center group-hover:bg-red-200 transition-colors duration-300">
+                    <Mail className="w-5 h-5 text-red-600" />
                   </div>
                   <div>
-                    <p className="font-medium">Email</p>
+                    <p className="font-semibold text-gray-900">Email</p>
                     <a 
                       href="mailto:bhaskarbhaskar4794@gmail.com"
-                      className="text-foreground-muted hover:text-primary transition-colors duration-300"
+                      className="text-gray-600 hover:text-blue-600 transition-colors duration-300"
                     >
                       bhaskarbhaskar4794@gmail.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-primary" />
+                <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center group-hover:bg-purple-200 transition-colors duration-300">
+                    <MapPin className="w-5 h-5 text-purple-600" />
                   </div>
                   <div>
-                    <p className="font-medium">Location</p>
-                    <p className="text-foreground-muted">Karnataka, India</p>
+                    <p className="font-semibold text-gray-900">Location</p>
+                    <p className="text-gray-600">Karnataka, India</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Social Media */}
-            <div className="card-elevated p-8">
-              <h3 className="text-2xl font-bold mb-6">Connect With Me</h3>
-              <div className="flex gap-4">
+            {/* Social Media Card */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+              <h3 className="text-2xl font-bold mb-6 text-gray-900">Connect With Me</h3>
+              <div className="flex gap-4 mb-6">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`w-12 h-12 rounded-xl bg-secondary hover:bg-primary 
-                              flex items-center justify-center transition-all duration-300 
-                              hover:text-primary-foreground hover:-translate-y-1 hover:shadow-lg
-                              group`}
+                    className="w-14 h-14 rounded-xl bg-gray-100 hover:bg-blue-600 flex items-center justify-center transition-all duration-300 hover:text-white hover:-translate-y-1 hover:shadow-lg group"
                     aria-label={`Connect with me on ${social.name}`}
                   >
                     {social.icon}
                   </a>
                 ))}
               </div>
-              <p className="text-foreground-muted text-sm mt-4">
+              <p className="text-gray-600 text-sm">
                 Follow me on social media for updates on my latest projects and tech insights.
               </p>
             </div>
 
-            {/* Availability */}
-            <div className="card-glass p-6">
+            {/* Availability Status */}
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-200">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-3 h-3 bg-success rounded-full animate-pulse"></div>
-                <p className="font-medium">Available for opportunities</p>
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <p className="font-semibold text-green-800">Available for opportunities</p>
               </div>
-              <p className="text-foreground-muted text-sm">
+              <p className="text-green-700 text-sm">
                 Open to internships, freelance projects, and collaboration opportunities.
               </p>
             </div>
