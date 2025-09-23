@@ -13,19 +13,19 @@ const Projects = () => {
       title: "Smart Navigation System for the Visually Impaired",
       description: "Engineered assistive technology solution using real-time object detection and audio feedback for obstacle detection with voice-based navigation instructions and proximity alerts.",
       githubUrl: "https://github.com/bhaskar2004/Smart-Navigation-Systems",
-      technologies: ["Python", "Audio Processing", "Object Detection", "AI/ML"]
+      technologies: ["Python", "Audio Processing", "Object Detection"]
     },
     {
       title: "Weather Forecast Bot",
       description: "Built real-time weather information system integrating OpenWeatherMap API with JSON parsing for location-based forecasting, supporting multiple cities and formatted data display.",
       githubUrl: "https://github.com/bhaskar2004/weather-bot",
-      technologies: ["BotPress", "APIs", "OpenWeatherMap", "JSON"]
+      technologies: ["BotPress","OpenWeatherMap","APIs"]
     },
     {
       title: "Better Trips - Tourism Web Application",
       description: "Developed responsive web application integrating Geoapify API to display 20 nearby tourist attractions with filtering, sorting, and integrated Google Maps for routing based on user location.",
       githubUrl: "https://github.com/bhaskar2004/better-trips",
-      technologies: ["HTML", "CSS", "JavaScript", "Geoapify API", "Google Maps"]
+      technologies: ["HTML", "CSS", "JavaScript", "Geoapify API"]
     }
   ];
 
@@ -79,18 +79,7 @@ const Projects = () => {
                   <Github size={16} />
                   View Code
                 </Button>
-                {/* <Button
-                  variant="ghost"
-                  size="sm"
-                  className="btn-ghost flex items-center gap-2"
-                  onClick={() => {
-                    // Open GitHub repository for project details
-                    window.open(project.githubUrl, '_blank');
-                  }}
-                >
-                  <ExternalLink size={16} />
-                  View Details
-                </Button> */}
+              
               </div>
             </div>
           ))}

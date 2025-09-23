@@ -97,7 +97,7 @@ const Footer = () => {
               >
                 bhaskarbhaskar4794@gmail.com
               </a>
-              <p className="text-background/80">Karnataka, India</p>
+              <p className="text-background/80">2FHX+FM Bengaluru, Karnataka</p>
               <div className="flex items-center gap-2 text-sm">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="text-background/80">Available for opportunities</span>
