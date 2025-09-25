@@ -110,7 +110,7 @@ const Footer = () => {
         <div className="pt-8 border-t border-background/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-background/80 text-sm flex items-center gap-2">
-              © {currentYear} Bhaskar T | Made with <Heart className="w-4 h-4 text-red-400" fill="currentColor" /> using React & Tailwind
+              © {currentYear} Bhaskar T  
             </p>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

@@ -145,7 +145,7 @@ const ResumeViewer = () => {
         className="border border-gray-300 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-lg flex items-center gap-2"
       >
         <Download size={16} />
-        Download
+        Download Resume
       </Button>
     </div>
   );

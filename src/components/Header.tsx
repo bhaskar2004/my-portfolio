@@ -34,8 +34,7 @@ const Header = () => {
     { label: 'About', section: 'about' },
     { label: 'Projects', section: 'projects' },
     { label: 'Education', section: 'education' },
-    { label: 'Achievements', section: 'achievements' },
-    { label: 'Contact', section: 'contact' }
+    { label: 'Achievements', section: 'achievements' }
   ];
 
   return (
@@ -62,7 +61,7 @@ const Header = () => {
               <button
                 key={item.section}
                 onClick={() => scrollToSection(item.section)}
-                className="text-foreground-muted hover:text-primary font-medium transition-colors duration-300 relative group"
+                className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300 relative group"
               >
                 {item.label}
                 <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -79,7 +78,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-10 h-10 rounded-lg bg-secondary flex items-center justify-center transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
+            className="md:hidden w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center transition-colors duration-300 hover:bg-blue-600 hover:text-white"
           >
             {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -97,7 +96,7 @@ const Header = () => {
                       scrollToSection(item.section);
                       setIsMobileMenuOpen(false);
                     }}
-                    className="text-left text-foreground-muted hover:text-primary font-medium transition-colors duration-300 py-2"
+                    className="text-left text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300 py-2"
                   >
                     {item.label}
                   </button>

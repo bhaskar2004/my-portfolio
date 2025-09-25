@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
-import heroVideo from "@/assets/herobg.mp4";
+import heroVideo from "@/assets/hero-bg.mp4";
 import ResumeViewer from "./ResumeViewer";
 
 const Hero = () => {
@@ -45,9 +45,23 @@ const Hero = () => {
       {/* Hero Content */}
       <div className="relative z-10 text-center section-padding max-w-5xl mx-auto">
         <div className="animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.5)' }}>
-            Hi, I'm <span className="gradient-text" style={{ textShadow: '2px 2px 4px rgba(4, 80, 243, 0.8), 0 0 10px rgba(53, 50, 50, 1)' }}>Bhaskar T</span>
-          </h1>
+          <h1 
+            className="text-5xl md:text-7xl font-bold mb-6 text-white" 
+            style={{ 
+            textShadow: '2px 2px 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,123,255,0.8)' 
+            }}
+          >
+          Hi, I'm <span 
+          className="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent" 
+          style={{ 
+            textShadow: '0 0 10px rgba(0, 132, 255, 1), 0 0 20px rgba(0, 4, 255, 0.9), 0 0 30px rgba(0,100,255,0.8)' 
+          }}
+          >
+          Bhaskar T
+          </span>
+        </h1>
+
+
           <p className="text-xl md:text-2xl text-white mb-8 max-w-3xl mx-auto font-medium" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.7), 0 0 8px rgba(0,0,0,0.4)' }}>
             Computer Science Undergraduate | Aspiring Software Developer
           </p>
